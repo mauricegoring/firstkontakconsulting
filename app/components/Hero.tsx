@@ -96,11 +96,11 @@ export default function Hero() {
 
             <ScrollReveal delay={0.5}>
               <div className="flex flex-wrap gap-3">
-                <motion.a href="#apply" className="btn-primary" whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
-                  Apply for the Buildout <ArrowUpRight size={14} />
+                <motion.a href="/turo-business-buildout" className="btn-primary" whileHover={{ scale: 1.03, y: -2 }} whileTap={{ scale: 0.97 }}>
+                  Apply for Buildout <ArrowUpRight size={14} />
                 </motion.a>
                 <motion.a href="#calculator" className="btn-ghost" whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                  Estimate Savings
+                  Estimate Your Position
                 </motion.a>
               </div>
             </ScrollReveal>
