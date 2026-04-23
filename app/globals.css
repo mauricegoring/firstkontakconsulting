@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark: #8B6914;
+  --obsidian: #080808;
+  --dark: #0E0E0E;
+  --dark-2: #141414;
+  --dark-3: #1C1C1C;
+  --dark-4: #242424;
+  --smoke: #F5F0E8;
+  --text-muted: #888;
+  --text-mid: #BBB;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--obsidian);
+  color: var(--smoke);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.font-bebas { font-family: 'Bebas Neue', sans-serif; }
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-mono-dm { font-family: 'DM Mono', monospace; }
+
+.gold { color: var(--gold); }
+.gold-gradient {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-line {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.25;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");
+}
+
+.stat-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), transparent);
+}
+
+.hover-gold {
+  transition: all 0.3s ease;
+}
+.hover-gold:hover {
+  border-color: rgba(201, 168, 76, 0.5) !important;
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.08);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #080808;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+}
+
+.btn-outline-gold {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+  transition: all 0.2s ease;
+  background: transparent;
+  display: inline-block;
+}
+.btn-outline-gold:hover {
+  background: var(--gold);
+  color: #080808;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.7s ease forwards; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+.stripe-bg {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(201, 168, 76, 0.03) 8px,
+    rgba(201, 168, 76, 0.03) 9px
+  );
+}
+
+nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
+.pull-quote { border-left: 3px solid var(--gold); padding-left: 1.5rem; }
+
+.tag {
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+
+input, textarea, select {
+  background: var(--dark-3) !important;
+  border: 1px solid rgba(201, 168, 76, 0.2) !important;
+  color: var(--smoke) !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+  border-color: var(--gold) !important;
+}
