@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV = [
   { label: "Strategy", href: "#strategy" },
   { label: "Calculator", href: "#calculator" },
   { label: "Programs", href: "#programs" },
+  { label: "Buildout", href: "/turo-business-buildout" },
   { label: "About", href: "#about" },
 ];
 
@@ -28,21 +29,15 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled
-          ? "rgba(6,6,6,0.85)"
-          : "transparent",
+        background: scrolled ? "rgba(6,6,6,0.85)" : "transparent",
         borderBottom: scrolled ? "1px solid var(--border)" : "none",
         backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
       }}
     >
       <div className="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <span
-            className="gd bebas"
-            style={{ fontSize: 36, letterSpacing: "0.04em", lineHeight: 1 }}
-          >
+        <a href="/" className="flex items-center gap-3 group">
+          <span className="gd bebas" style={{ fontSize: 36, letterSpacing: "0.04em", lineHeight: 1 }}>
             FK
           </span>
           <span style={{ width: 1, height: 22, background: "var(--border)" }} />
@@ -59,8 +54,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {NAV.map(({ label, href }) => (
             <motion.a
               key={label}
@@ -70,36 +64,30 @@ export default function Navbar() {
                 fontSize: 11,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "var(--text-3)",
+                color: label === "Buildout" ? "var(--gold)" : "var(--text-3)",
               }}
-              whileHover={{ color: "#C9A84C" }}
+              whileHover={{ color: "var(--gold)" }}
               transition={{ duration: 0.2 }}
             >
               {label}
             </motion.a>
           ))}
           <motion.a
-            href="#apply"
+            href="/turo-business-buildout"
             className="btn-primary"
             style={{ padding: "10px 24px", fontSize: 12 }}
             whileHover={{ scale: 1.03, y: -1 }}
             whileTap={{ scale: 0.97 }}
           >
-            Get Started <ArrowUpRight size={12} />
+            Apply <ArrowUpRight size={12} />
           </motion.a>
         </div>
 
-        {/* Mobile Toggle */}
         <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? (
-            <X size={20} style={{ color: "var(--gold)" }} />
-          ) : (
-            <Menu size={20} style={{ color: "var(--gold)" }} />
-          )}
+          {mobileOpen ? <X size={20} style={{ color: "var(--gold)" }} /> : <Menu size={20} style={{ color: "var(--gold)" }} />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {mobileOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -108,22 +96,12 @@ export default function Navbar() {
           style={{ background: "rgba(6,6,6,0.98)" }}
         >
           {NAV.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              onClick={() => setMobileOpen(false)}
-              style={{ color: "var(--text-2)", fontSize: 14, fontWeight: 400 }}
-            >
+            <a key={label} href={href} onClick={() => setMobileOpen(false)} style={{ color: label === "Buildout" ? "var(--gold)" : "var(--text-2)", fontSize: 14, fontWeight: 400 }}>
               {label}
             </a>
           ))}
-          <a
-            href="#apply"
-            onClick={() => setMobileOpen(false)}
-            className="btn-primary text-center"
-            style={{ fontSize: 12 }}
-          >
-            Get Started
+          <a href="/turo-business-buildout" onClick={() => setMobileOpen(false)} className="btn-primary text-center" style={{ fontSize: 12 }}>
+            Apply for Buildout
           </a>
         </motion.div>
       )}
