@@ -32,7 +32,7 @@ export default function Home() {
           borderBottom: scrolled ? "1px solid var(--border)" : "none",
         }}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-8 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2.5">
             <span className="gd" style={{fontFamily:"'Instrument Serif',serif",fontSize:28,fontWeight:400,lineHeight:1}}>FK</span>
             <span style={{width:1,height:20,background:"var(--border)"}}/>
@@ -57,7 +57,7 @@ export default function Home() {
           </button>
         </div>
         {mobileNav && (
-          <div className="md:hidden px-6 pb-6 flex flex-col gap-4" style={{background:"rgba(6,6,6,0.98)"}}>
+          <div className="md:hidden px-8 pb-6 flex flex-col gap-4" style={{background:"rgba(6,6,6,0.98)"}}>
             {NAV.map(n=>(
               <a key={n} href={`#${n.toLowerCase()}`} onClick={()=>setMobileNav(false)}
                 style={{color:"var(--text-2)",fontSize:14,fontWeight:400}}>{n}</a>
@@ -79,7 +79,7 @@ export default function Home() {
           background:"radial-gradient(circle,rgba(201,168,76,0.03) 0%,transparent 65%)"
         }}/>
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-5xl mx-auto px-8 relative z-10 w-full">
           <div className="grid md:grid-cols-12 gap-12 items-end">
             {/* Left column */}
             <div className="md:col-span-8">
@@ -130,7 +130,7 @@ export default function Home() {
 
       {/* ══════ PROBLEM ══════ */}
       <section style={{background:"var(--surface)",borderTop:"1px solid var(--border)",borderBottom:"1px solid var(--border)",padding:"100px 24px"}}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div>
               <div className="chip mb-6">The Problem</div>
@@ -162,7 +162,7 @@ export default function Home() {
 
       {/* ══════ STRATEGY ══════ */}
       <section id="strategy" style={{padding:"120px 24px"}}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <div className="chip mb-6">The Firstkontak Method</div>
             <h2 className="serif" style={{fontSize:"clamp(36px,5vw,60px)",lineHeight:1}}>
@@ -221,7 +221,7 @@ export default function Home() {
 
       {/* ══════ PROGRAMS ══════ */}
       <section id="programs" style={{background:"var(--surface)",borderTop:"1px solid var(--border)",borderBottom:"1px solid var(--border)",padding:"120px 24px"}}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <div className="chip mb-6">Programs</div>
             <h2 className="serif" style={{fontSize:"clamp(36px,5vw,56px)",lineHeight:1}}>
@@ -287,7 +287,7 @@ export default function Home() {
               {name:"Wife Made Course",price:"Soon",desc:"For the spouse ready to build her own income stream."},
               {name:"Whole Life Business Kit",price:"Bundle",desc:"Entity docs, bookkeeping, listing scripts & more."},
             ].map(({name,price,desc})=>(
-              <div key={name} className="card px-6 py-5 flex items-center justify-between gap-4">
+              <div key={name} className="card px-8 py-5 flex items-center justify-between gap-4">
                 <div>
                   <div style={{fontSize:14,fontWeight:500,marginBottom:2}}>{name}</div>
                   <div style={{fontSize:12,color:"var(--text-3)"}}>{desc}</div>
@@ -301,7 +301,7 @@ export default function Home() {
 
       {/* ══════ ABOUT ══════ */}
       <section id="about" style={{padding:"120px 24px"}}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-12 gap-16 items-center">
             {/* Monogram */}
             <div className="md:col-span-5">
@@ -412,7 +412,7 @@ export default function Home() {
 
       {/* ══════ FOOTER ══════ */}
       <footer style={{borderTop:"1px solid var(--border)",padding:"48px 24px 36px",background:"var(--obsidian)"}}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
             <div className="flex items-center gap-2.5">
               <span className="gd" style={{fontFamily:"'Instrument Serif',serif",fontSize:28,fontWeight:400,lineHeight:1}}>FK</span>
