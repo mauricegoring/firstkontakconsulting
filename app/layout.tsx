@@ -51,8 +51,9 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" href="/logo.png" />
       </head>
-      <body className="noise">{children}</body>
+      <body className="syne">{children}</body>
     </html>
   );
 }

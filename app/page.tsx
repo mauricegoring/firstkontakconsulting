@@ -17,6 +17,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProblemSection />
+
+      {/* Gold divider */}
+      <div className="section-divider" />
+
       <StrategySection />
 
       {/* ═══ TAX SAVINGS CALCULATOR ═══ */}
@@ -36,7 +40,7 @@ export default function Home() {
             width: 600,
             height: 600,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(201, 168, 76, 0.04) 0%, transparent 60%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative z-10">
@@ -44,12 +48,13 @@ export default function Home() {
             <div className="text-center mb-12">
               <div className="chip mb-6">ROI Calculator</div>
               <h2
-                className="playfair"
-                style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.05, fontWeight: 700 }}
+                className="bebas"
+                style={{ fontSize: "clamp(40px, 5.5vw, 68px)", lineHeight: 1.05, letterSpacing: "0.04em" }}
               >
-                How much will <span className="gd" style={{ fontStyle: "italic" }}>you save</span>?
+                HOW MUCH WILL<br /><span className="gd">YOU SAVE</span>?
               </h2>
               <p
+                className="syne"
                 style={{
                   color: "var(--text-2)",
                   lineHeight: 1.7,
@@ -69,6 +74,10 @@ export default function Home() {
       </section>
 
       <ProgramsSection />
+
+      {/* Gold divider */}
+      <div className="section-divider" />
+
       <AboutSection />
 
       {/* ═══ APPLICATION ═══ */}
@@ -85,12 +94,12 @@ export default function Home() {
             <div className="text-center mb-14">
               <div className="chip mb-6">Get Started</div>
               <h2
-                className="playfair"
-                style={{ fontSize: "clamp(36px, 5vw, 52px)", lineHeight: 1.05, fontWeight: 700, marginBottom: 16 }}
+                className="bebas"
+                style={{ fontSize: "clamp(40px, 5vw, 56px)", lineHeight: 1.05, letterSpacing: "0.04em", marginBottom: 16 }}
               >
-                Ready to keep <span className="gd" style={{ fontStyle: "italic" }}>your money</span>?
+                READY TO KEEP<br /><span className="gd">YOUR MONEY</span>?
               </h2>
-              <p style={{ color: "var(--text-2)", lineHeight: 1.7, maxWidth: 420, margin: "0 auto" }}>
+              <p className="syne" style={{ color: "var(--text-2)", lineHeight: 1.7, maxWidth: 420, margin: "0 auto" }}>
                 Apply for coaching or tell us where you are in your journey. We respond within 24 hours.
               </p>
             </div>

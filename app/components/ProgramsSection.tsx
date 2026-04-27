@@ -58,47 +58,80 @@ export default function ProgramsSection() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <div className="chip mb-6">Programs</div>
-            <h2 className="playfair" style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.05, fontWeight: 700 }}>
-              Three ways to <span className="gd" style={{ fontStyle: "italic" }}>enter the system</span>
+            <h2 className="bebas" style={{ fontSize: "clamp(40px, 5.5vw, 68px)", lineHeight: 1.05, letterSpacing: "0.04em" }}>
+              THREE WAYS TO<br /><span className="gd">ENTER THE SYSTEM</span>
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-6">
           {programs.map(({ name, tier, desc, features, cta, href, featured, icon }, i) => (
             <ScrollReveal key={name} delay={i * 0.12}>
               <motion.div
                 className="glass-card flex flex-col"
                 style={{
-                  padding: "40px 32px",
+                  padding: "44px 36px",
                   position: "relative",
-                  background: featured ? "linear-gradient(160deg, rgba(139,105,20,0.18), rgba(12,12,12,0.9))" : undefined,
-                  borderColor: featured ? "rgba(201,168,76,0.35)" : undefined,
+                  borderTop: featured ? "2px solid var(--gold)" : undefined,
+                  background: featured ? "linear-gradient(160deg, rgba(184, 134, 11, 0.1), rgba(17, 17, 17, 0.95))" : undefined,
+                  borderColor: featured ? "rgba(201, 168, 76, 0.3)" : undefined,
                 }}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
               >
                 {featured && (
-                  <div className="mono" style={{ position: "absolute", top: -1, right: 24, background: "linear-gradient(135deg, var(--gold-dark), var(--gold))", color: "var(--obsidian)", padding: "4px 12px", fontSize: 9 }}>
-                    <Star size={10} /> Flagship
+                  <div
+                    className="mono flex items-center gap-1"
+                    style={{
+                      position: "absolute",
+                      top: -1,
+                      right: 20,
+                      background: "linear-gradient(135deg, var(--gold-dark), var(--gold))",
+                      color: "var(--obsidian)",
+                      padding: "5px 14px",
+                      fontSize: 9,
+                      letterSpacing: "0.12em",
+                    }}
+                  >
+                    <Star size={10} /> FLAGSHIP
                   </div>
                 )}
 
-                <div style={{ color: "var(--gold)", marginBottom: 12 }}>{icon}</div>
-                <div className="mono" style={{ fontSize: 10, letterSpacing: "0.12em", color: "var(--gold)", textTransform: "uppercase", marginBottom: 12 }}>
+                <div style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 8,
+                  background: "linear-gradient(135deg, rgba(184, 134, 11, 0.15), rgba(201, 168, 76, 0.05))",
+                  display: "grid",
+                  placeItems: "center",
+                  color: "var(--gold)",
+                  marginBottom: 20,
+                }}>
+                  {icon}
+                </div>
+
+                <div className="mono" style={{ fontSize: 10, letterSpacing: "0.14em", color: "var(--gold)", textTransform: "uppercase", marginBottom: 12 }}>
                   {tier}
                 </div>
-                <h3 className="bebas" style={{ fontSize: 32, marginBottom: 8 }}>{name}</h3>
-                <p style={{ fontSize: 14, color: "var(--text-3)", marginBottom: 24 }}>{desc}</p>
+
+                <h3 className="bebas" style={{ fontSize: 36, letterSpacing: "0.04em", marginBottom: 8, lineHeight: 1 }}>{name}</h3>
+
+                <p className="syne" style={{ fontSize: 14, color: "var(--text-3)", marginBottom: 28, lineHeight: 1.6 }}>{desc}</p>
 
                 <div className="flex flex-col gap-3 flex-1 mb-8">
                   {features.map((f) => (
-                    <div key={f} className="flex items-start gap-3" style={{ fontSize: 13, color: "var(--text-2)" }}>
-                      <CheckCircle size={12} style={{ color: "var(--gold-dark)" }} /> {f}
+                    <div key={f} className="flex items-start gap-3 syne" style={{ fontSize: 13, color: "var(--text-2)" }}>
+                      <CheckCircle size={12} style={{ flexShrink: 0, marginTop: 3, color: "var(--gold-dark)" }} /> {f}
                     </div>
                   ))}
                 </div>
 
-                <motion.a href={href} className={featured ? "btn-primary text-center" : "btn-ghost text-center"} whileHover={{ scale: 1.03 }}>
+                <motion.a
+                  href={href}
+                  className={featured ? "btn-primary text-center" : "btn-ghost text-center"}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
                   {cta} <ArrowUpRight size={12} />
                 </motion.a>
               </motion.div>

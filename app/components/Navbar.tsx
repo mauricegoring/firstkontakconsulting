@@ -17,92 +17,119 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 50);
+    const handler = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
   return (
     <motion.nav
-      initial={{ y: -80 }}
+      initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled ? "rgba(6,6,6,0.85)" : "transparent",
+        background: scrolled ? "rgba(10, 10, 10, 0.85)" : "transparent",
         borderBottom: scrolled ? "1px solid var(--border)" : "none",
         backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
+        transition: "all 0.3s ease",
       }}
     >
-      <div className="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-8 flex items-center justify-between" style={{ height: scrolled ? 60 : 72, transition: "height 0.3s ease" }}>
+        {/* Logo */}
         <a href="/" className="flex items-center gap-3 group">
-          <span className="gd bebas" style={{ fontSize: 36, letterSpacing: "0.04em", lineHeight: 1 }}>
-            FK
-          </span>
-          <span style={{ width: 1, height: 22, background: "var(--border)" }} />
+          <img
+            src="/logo.png"
+            alt="Firstkontak Consulting"
+            style={{ height: 40, width: "auto", opacity: scrolled ? 1 : 0.95, transition: "opacity 0.3s" }}
+          />
+          <div style={{ width: 1, height: 20, background: "var(--border)" }} />
           <span
-            className="mono"
-            style={{
-              fontSize: 10,
-              letterSpacing: "0.14em",
-              color: "var(--text-3)",
-              textTransform: "uppercase",
-            }}
+            className="bebas"
+            style={{ fontSize: 14, letterSpacing: "0.16em", color: "var(--text-3)", textTransform: "uppercase" }}
           >
             Consulting
           </span>
         </a>
 
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV.map(({ label, href }) => (
-            <motion.a
+            <a
               key={label}
               href={href}
-              className="mono"
+              className="mono relative group"
               style={{
                 fontSize: 11,
-                letterSpacing: "0.1em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 color: label === "Buildout" ? "var(--gold)" : "var(--text-3)",
+                transition: "color 0.2s",
               }}
-              whileHover={{ color: "var(--gold)" }}
-              transition={{ duration: 0.2 }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = label === "Buildout" ? "var(--gold)" : "var(--text-3)")}
             >
               {label}
-            </motion.a>
+              <span
+                className="absolute bottom-0 left-0 w-0 group-hover:w-full"
+                style={{
+                  height: 1,
+                  background: "var(--gold)",
+                  transition: "width 0.3s ease",
+                }}
+              />
+            </a>
           ))}
           <motion.a
             href="/turo-business-buildout"
             className="btn-primary"
-            style={{ padding: "10px 24px", fontSize: 12 }}
+            style={{ padding: "10px 28px", fontSize: 13 }}
             whileHover={{ scale: 1.03, y: -1 }}
             whileTap={{ scale: 0.97 }}
           >
-            Apply <ArrowUpRight size={12} />
+            Book a Call <ArrowUpRight size={12} />
           </motion.a>
         </div>
 
+        {/* Mobile Hamburger */}
         <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X size={20} style={{ color: "var(--gold)" }} /> : <Menu size={20} style={{ color: "var(--gold)" }} />}
+          {mobileOpen ? <X size={22} style={{ color: "var(--gold)" }} /> : <Menu size={22} style={{ color: "var(--gold)" }} />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {mobileOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden px-8 pb-6 flex flex-col gap-4"
-          style={{ background: "rgba(6,6,6,0.98)" }}
+          className="md:hidden"
+          style={{
+            background: "rgba(10, 10, 10, 0.98)",
+            borderBottom: "1px solid var(--border)",
+            padding: "24px 32px 32px",
+          }}
         >
-          {NAV.map(({ label, href }) => (
-            <a key={label} href={href} onClick={() => setMobileOpen(false)} style={{ color: label === "Buildout" ? "var(--gold)" : "var(--text-2)", fontSize: 14, fontWeight: 400 }}>
-              {label}
+          <div className="flex flex-col gap-5">
+            {NAV.map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                onClick={() => setMobileOpen(false)}
+                className="bebas"
+                style={{
+                  fontSize: 24,
+                  letterSpacing: "0.06em",
+                  color: label === "Buildout" ? "var(--gold)" : "var(--smoke)",
+                }}
+              >
+                {label}
+              </a>
+            ))}
+            <a href="/turo-business-buildout" onClick={() => setMobileOpen(false)} className="btn-primary text-center" style={{ marginTop: 8 }}>
+              Book a Call
             </a>
-          ))}
-          <a href="/turo-business-buildout" onClick={() => setMobileOpen(false)} className="btn-primary text-center" style={{ fontSize: 12 }}>
-            Apply for Buildout
-          </a>
+          </div>
         </motion.div>
       )}
     </motion.nav>
