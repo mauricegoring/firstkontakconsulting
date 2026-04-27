@@ -29,7 +29,7 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled ? "rgba(10, 10, 10, 0.85)" : "transparent",
+        background: scrolled ? "rgba(245, 240, 232, 0.9)" : "transparent",
         borderBottom: scrolled ? "1px solid var(--border)" : "none",
         backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
@@ -105,7 +105,7 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden"
           style={{
-            background: "rgba(10, 10, 10, 0.98)",
+            background: "rgba(245, 240, 232, 0.98)",
             borderBottom: "1px solid var(--border)",
             padding: "24px 32px 32px",
           }}

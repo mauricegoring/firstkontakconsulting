@@ -73,7 +73,7 @@ export default function ProgramsSection() {
                   padding: "44px 36px",
                   position: "relative",
                   borderTop: featured ? "2px solid var(--gold)" : undefined,
-                  background: featured ? "linear-gradient(160deg, rgba(184, 134, 11, 0.1), rgba(17, 17, 17, 0.95))" : undefined,
+                  background: featured ? "linear-gradient(160deg, rgba(184, 134, 11, 0.08), rgba(255, 255, 255, 0.6))" : undefined,
                   borderColor: featured ? "rgba(201, 168, 76, 0.3)" : undefined,
                 }}
                 whileHover={{ y: -8 }}

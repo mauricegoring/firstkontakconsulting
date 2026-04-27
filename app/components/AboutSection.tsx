@@ -23,7 +23,7 @@ export default function AboutSection() {
                 className="glass-card gold-border-glow flex items-center justify-center"
                 style={{
                   aspectRatio: "1/1.1",
-                  background: "linear-gradient(160deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.98))",
+                  background: "linear-gradient(160deg, rgba(232, 224, 208, 0.95), rgba(245, 240, 232, 0.98))",
                   position: "relative",
                   overflow: "hidden",
                   padding: 48,
