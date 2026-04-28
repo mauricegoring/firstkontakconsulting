@@ -29,28 +29,52 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled ? "rgba(245, 240, 232, 0.9)" : "transparent",
-        borderBottom: scrolled ? "1px solid var(--border)" : "none",
-        backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
+        background: scrolled ? "rgba(245, 240, 232, 0.92)" : "rgba(245, 240, 232, 0.6)",
+        borderBottom: "1px solid var(--border)",
+        backdropFilter: "blur(24px) saturate(180%)",
+        WebkitBackdropFilter: "blur(24px) saturate(180%)",
         transition: "all 0.3s ease",
       }}
     >
-      <div className="max-w-6xl mx-auto px-8 flex items-center justify-between" style={{ height: scrolled ? 60 : 72, transition: "height 0.3s ease" }}>
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-3 group">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 flex items-center justify-between" style={{ height: scrolled ? 60 : 72, transition: "height 0.3s ease" }}>
+        {/* Logo + Wordmark */}
+        <a href="/" className="flex items-center gap-3 group" style={{ textDecoration: "none" }}>
           <img
             src="/logo.png"
-            alt="Firstkontak Consulting"
-            style={{ height: 40, width: "auto", opacity: scrolled ? 1 : 0.95, transition: "opacity 0.3s" }}
+            alt="Firstkontak"
+            style={{
+              height: scrolled ? 36 : 42,
+              width: "auto",
+              transition: "height 0.3s ease",
+              filter: "none",
+            }}
           />
-          <div style={{ width: 1, height: 20, background: "var(--border)" }} />
-          <span
-            className="bebas"
-            style={{ fontSize: 14, letterSpacing: "0.16em", color: "var(--text-3)", textTransform: "uppercase" }}
-          >
-            Consulting
-          </span>
+          <div className="flex flex-col justify-center">
+            <span
+              className="bebas"
+              style={{
+                fontSize: 18,
+                letterSpacing: "0.14em",
+                color: "var(--smoke)",
+                lineHeight: 1.1,
+                transition: "color 0.2s",
+              }}
+            >
+              FIRSTKONTAK
+            </span>
+            <span
+              className="mono"
+              style={{
+                fontSize: 9,
+                letterSpacing: "0.2em",
+                color: "var(--gold-dark)",
+                textTransform: "uppercase",
+                lineHeight: 1.2,
+              }}
+            >
+              CONSULTING
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
