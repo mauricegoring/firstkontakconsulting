@@ -15,9 +15,9 @@ export default function AboutSection() {
   return (
     <section id="about" style={{ padding: "120px 24px" }}>
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-16 items-center">
+        <div className="grid md:grid-cols-12 gap-16 items-center justify-items-center">
           {/* Monogram / Quote Card */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 md:col-start-1">
             <ScrollReveal direction="left">
               <div
                 className="glass-card gold-border-glow flex items-center justify-center"

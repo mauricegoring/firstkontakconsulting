@@ -64,7 +64,7 @@ export default function ProgramsSection() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 justify-items-stretch">
           {programs.map(({ name, tier, desc, features, cta, href, featured, icon }, i) => (
             <ScrollReveal key={name} delay={i * 0.12}>
               <motion.div

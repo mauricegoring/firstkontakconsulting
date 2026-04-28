@@ -65,7 +65,7 @@ export default function StrategySection() {
         </ScrollReveal>
 
         {/* Strategy pillars */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 justify-items-stretch">
           {phases.map(({ n, title, sub, icon, points }, i) => (
             <ScrollReveal key={n} delay={i * 0.15} direction="up">
               <motion.div

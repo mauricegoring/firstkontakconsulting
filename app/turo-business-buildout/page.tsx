@@ -63,8 +63,8 @@ export default function TuroBusinessBuildoutPage() {
           }}
         />
         <div className="max-w-6xl mx-auto relative z-10 w-full">
-          <div className="grid md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-7">
+          <div className="grid md:grid-cols-12 gap-12 items-center justify-items-center">
+            <div className="md:col-span-7 md:col-start-1">
               <ScrollReveal>
                 <Link href="/" className="mono" style={{ color: "var(--text-3)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}>
                   ← Back to Firstkontak Consulting
@@ -132,7 +132,7 @@ export default function TuroBusinessBuildoutPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4 justify-items-stretch">
             {fitItems.map((item, i) => (
               <ScrollReveal key={item} delay={i * 0.08}>
                 <div className="glass-card flex items-start gap-4" style={{ padding: 24 }}>
@@ -158,7 +158,7 @@ export default function TuroBusinessBuildoutPage() {
               </p>
             </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4 justify-items-stretch">
             {deliverables.map(({ icon: Icon, title, text }, i) => (
               <ScrollReveal key={title} delay={i * 0.08}>
                 <motion.div className="glass-card" style={{ padding: 28, minHeight: 220 }} whileHover={{ y: -5 }}>
@@ -182,7 +182,7 @@ export default function TuroBusinessBuildoutPage() {
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-4 gap-4 justify-items-stretch">
             {steps.map(({ n, title, text }, i) => (
               <ScrollReveal key={n} delay={i * 0.08}>
                 <div className="glass-card" style={{ padding: 26, height: "100%" }}>
@@ -197,7 +197,7 @@ export default function TuroBusinessBuildoutPage() {
       </section>
 
       <section style={{ padding: "110px 24px" }}>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center justify-items-center">
           <div className="md:col-span-6">
             <ScrollReveal>
               <div className="chip mb-6"><Sparkles size={13} /> Why It Works</div>
@@ -212,7 +212,7 @@ export default function TuroBusinessBuildoutPage() {
               </p>
             </ScrollReveal>
           </div>
-          <div className="md:col-span-6 grid grid-cols-2 gap-4">
+          <div className="md:col-span-6 grid grid-cols-2 gap-4 justify-items-stretch">
             {[
               [Briefcase, "Business foundation"],
               [Car, "Income-producing asset"],

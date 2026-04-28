@@ -22,9 +22,9 @@ export default function ProblemSection() {
       }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-16 items-start">
+        <div className="grid md:grid-cols-12 gap-16 items-start justify-items-center">
           {/* Left: Headline */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 md:col-start-1">
             <ScrollReveal>
               <div className="chip mb-6">The Problem</div>
               <h2
@@ -47,7 +47,7 @@ export default function ProblemSection() {
           </div>
 
           {/* Right: Pain point cards */}
-          <div className="md:col-span-7 grid grid-cols-2 gap-4">
+          <div className="md:col-span-7 grid grid-cols-2 gap-4 justify-items-center">
             {problems.map(({ num, label, icon, desc }, i) => (
               <ScrollReveal key={num} delay={i * 0.1}>
                 <motion.div

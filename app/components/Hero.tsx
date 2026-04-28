@@ -94,8 +94,8 @@ export default function Hero() {
       />
 
       <div className="max-w-6xl mx-auto px-8 relative z-10 w-full">
-        <div className="grid md:grid-cols-12 gap-12 items-end">
-          <div className="md:col-span-7">
+        <div className="grid md:grid-cols-12 gap-12 items-end justify-items-center">
+          <div className="md:col-span-7 md:col-start-1">
             <ScrollReveal delay={0.1}>
               <div className="chip mb-7" style={{ backdropFilter: "blur(12px)", background: "rgba(201, 168, 76, 0.06)", border: "1px solid rgba(201, 168, 76, 0.2)" }}>
                 <ShieldCheck size={13} /> For High-Income W-2 Earners
