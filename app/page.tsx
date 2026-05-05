@@ -16,6 +16,52 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+
+      {/* ═══ SAAS BAND ═══ */}
+      <section
+        style={{
+          background: "linear-gradient(135deg, rgba(201,168,76,0.10), rgba(14,14,14,1) 60%)",
+          borderTop: "1px solid var(--border)",
+          borderBottom: "1px solid var(--border)",
+          padding: "32px 24px",
+        }}
+      >
+        <div
+          className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{ textAlign: "left" }}
+        >
+          <div style={{ flex: 1 }}>
+            <div
+              className="mono"
+              style={{
+                fontSize: 10,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "var(--gold)",
+                marginBottom: 8,
+              }}
+            >
+              The Operating Layer
+            </div>
+            <p
+              className="syne"
+              style={{ fontSize: 17, lineHeight: 1.55, color: "var(--smoke)", margin: 0, maxWidth: 720 }}
+            >
+              Built a 22-car fleet by hand. Now we run ours from one screen. <span className="gd">FK Command Center</span>, the operating system we built for tax-strategic Turo hosts.
+            </p>
+          </div>
+          <a
+            href="https://fkcommandcenter.pro/"
+            target="_blank"
+            rel="noopener"
+            className="btn-primary"
+            style={{ padding: "14px 24px", whiteSpace: "nowrap", fontSize: 14 }}
+          >
+            See it →
+          </a>
+        </div>
+      </section>
+
       <ProblemSection />
 
       {/* Gold divider */}

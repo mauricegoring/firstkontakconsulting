@@ -76,6 +76,66 @@ export default function Footer() {
 
           <div className="section-divider" />
 
+          {/* Ecosystem cross-link band */}
+          <div style={{ paddingTop: 24, paddingBottom: 24 }}>
+            <div
+              className="mono"
+              style={{
+                fontSize: 10,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "var(--gold)",
+                marginBottom: 16,
+                textAlign: "center",
+              }}
+            >
+              Firstkontak Ecosystem
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4" style={{ textAlign: "center" }}>
+              {[
+                { label: "Coaching", url: "https://firstkontakconsulting.com" },
+                { label: "Operator", url: "https://firstkontakconsultant.com" },
+                { label: "Education", url: "https://hostacademy.company" },
+                { label: "MINI Niche", url: "https://minimoneymethod.com" },
+                { label: "Software", url: "https://fkcommandcenter.pro" },
+              ].map(({ label, url }) => (
+                <div key={label}>
+                  <div
+                    className="mono"
+                    style={{ fontSize: 9, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--text-3)", marginBottom: 4 }}
+                  >
+                    {label}
+                  </div>
+                  <a
+                    href={url}
+                    target={url.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener"
+                    style={{ fontSize: 12, color: "var(--smoke)", textDecoration: "none" }}
+                  >
+                    {url.replace("https://", "")}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Powered by lockup */}
+          <div
+            className="mono"
+            style={{
+              padding: "16px 0",
+              borderTop: "1px solid var(--border)",
+              borderBottom: "1px solid var(--border)",
+              textAlign: "center",
+              fontSize: 11,
+              letterSpacing: "0.10em",
+              textTransform: "uppercase",
+              color: "var(--gold)",
+            }}
+          >
+            Powered by FK Command Center · The operating system for tax-strategic Turo hosts
+          </div>
+
           <div style={{ paddingTop: 24 }} className="flex flex-col md:flex-row justify-between gap-4">
             <div className="mono" style={{ fontSize: 10, color: "var(--text-3)", letterSpacing: "0.06em" }}>
               © {new Date().getFullYear()} Firstkontak Consulting Inc. All rights reserved.

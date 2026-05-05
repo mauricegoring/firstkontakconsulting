@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
-import { Book, Users, Cross, Star, CheckCircle, ArrowUpRight } from "lucide-react";
+import { Book, Users, Cross, Star, CheckCircle, ArrowUpRight, Cpu } from "lucide-react";
 
 const programs = [
   {
@@ -49,6 +49,21 @@ const programs = [
     featured: false,
     icon: <Cross size={18} />,
   },
+  {
+    name: "FK Command Center",
+    tier: "Operating System",
+    desc: "The software we use to run our own fleet. Listings, pricing, bookkeeping, tax-ready exports.",
+    features: [
+      "Fleet roster + listings",
+      "Pricing & bookkeeping",
+      "Tax-ready exports",
+      "Free trial, no card",
+    ],
+    cta: "Start Free Trial",
+    href: "https://fkcommandcenter.pro/",
+    featured: false,
+    icon: <Cpu size={18} />,
+  },
 ];
 
 export default function ProgramsSection() {
@@ -59,12 +74,12 @@ export default function ProgramsSection() {
           <div className="text-center mb-16">
             <div className="chip mb-6">Programs</div>
             <h2 className="bebas" style={{ fontSize: "clamp(40px, 5.5vw, 68px)", lineHeight: 1.05, letterSpacing: "0.04em" }}>
-              THREE WAYS TO<br /><span className="gd">ENTER THE SYSTEM</span>
+              FOUR WAYS TO<br /><span className="gd">ENTER THE SYSTEM</span>
             </h2>
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-6 justify-items-stretch">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-stretch">
           {programs.map(({ name, tier, desc, features, cta, href, featured, icon }, i) => (
             <ScrollReveal key={name} delay={i * 0.12}>
               <motion.div
